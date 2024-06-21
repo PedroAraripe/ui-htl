@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>About page 2g</h1>
+    <h1>About page 3g</h1>
   </div>
 </template>
 
