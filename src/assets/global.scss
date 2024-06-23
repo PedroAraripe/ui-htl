@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$primary-white:#fefefe;
+$primary-gray:#c4c4c4;
+
+.bg-w-1 {
+  background-color: $primary-white;
+}
+
+.bg-g-1 {
+  background-color: $primary-gray;
+}
