@@ -42,7 +42,7 @@ const mockedHotels: IHotelCardPreview[] = [
   },
   {
     id: 2,
-    title: "Venha de aventurar no divertida mente 2",
+    title: "Venha se aventurar no divertida mente 2",
     receiver: "Joy",
     monthToOpen: "Junho",
     currentOpen: true,
@@ -68,7 +68,7 @@ const mockedHotels: IHotelCardPreview[] = [
   },
   {
     id: 3,
-    title: "Venha de aventurar no divertida mente 2",
+    title: "Venha se aventurar no divertida mente 2",
     receiver: "Joy",
     currentOpen: false,
     monthToOpen: "Fevereiro",
@@ -89,7 +89,7 @@ const mockedHotels: IHotelCardPreview[] = [
   },
   {
     id: 4,
-    title: "Venha de aventurar no divertida mente 2",
+    title: "Venha se aventurar no divertida mente 2",
     receiver: "Joy",
     currentOpen: false,
     monthToOpen: "Fevereiro",
