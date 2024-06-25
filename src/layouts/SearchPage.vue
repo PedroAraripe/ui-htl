@@ -1,6 +1,6 @@
 <template>
   <div class="bg-w-1">
-    <div class="px-4 py-2">
+    <div class="px-6 py-2">
       <slot name="aside" />
     </div>
 
@@ -11,6 +11,3 @@
     </main>
   </div>
 </template>
-
-<style lang="scss" scoped>
-</style>

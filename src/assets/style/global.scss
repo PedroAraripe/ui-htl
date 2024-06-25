@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('./fonts.scss');
+
 $primary-white:#fefefe;
 $primary-gray:#c4c4c4;
 
@@ -11,4 +13,10 @@ $primary-gray:#c4c4c4;
 
 .bg-g-1 {
   background-color: $primary-gray;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
