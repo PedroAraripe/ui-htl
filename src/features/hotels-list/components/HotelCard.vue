@@ -62,8 +62,6 @@ defineProps({
     required: true,
   },
 });
-
-const getPhoto = (path: string) => require(path);
 </script>
 
 <style lang="scss" scoped>
