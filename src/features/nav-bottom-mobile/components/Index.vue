@@ -3,9 +3,11 @@
       <v-bottom-navigation>
         <v-btn
           v-for="route of secondaryRoutes"
-          :key="route.id"
+          :key="route.name"
           :value="route.name"
           class="nav-item"
+          :class="{'v-btn--active' : route.isCurrent}"
+          @click="router.push({name : route.name})"
         >
           <!-- <v-icon>{{ route.meta.icon }}</v-icon> -->
     
@@ -16,7 +18,12 @@
 </template>
 
 <script lang="ts" setup>
-import { secondaryRoutes } from "@/composables/navRoutes";
+import { getSecondaryRoutes } from "@/composables/navRoutes";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const secondaryRoutes = getSecondaryRoutes();
 </script>
 
 <style lang="scss" scoped>
@@ -25,5 +32,9 @@ import { secondaryRoutes } from "@/composables/navRoutes";
 .nav-item.v-btn--active {
   color: $theme-red-1;
   font-weight: 600;
+
+  & > :first-child {
+    opacity: 0 !important;
+  }
 }
 </style>
