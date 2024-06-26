@@ -10,4 +10,4 @@ NEW_FEATURE_SUB_FOLDERS="api,components,composables,stores,types";
 NEW_FEATURE_SUB_FOLDERS_TO_CREATE="$NEW_FEATURE_FOLDER/{$NEW_FEATURE_SUB_FOLDERS}"
 mkdir -p $1/{api,components,composables,stores,types};
 
-mkdir $1/index.ts; 
+touch $1/index.ts; 

@@ -1,23 +1,6 @@
 <template>
   <div class="wrapper-hotel-card px-6 py-5">
     <HotelSlider :previews="hotel.previews" />
-      <!-- <v-carousel-item
-        src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-        cover
-      ></v-carousel-item>
-
-      <v-carousel-item
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        cover
-      ></v-carousel-item>
-    </v-carousel> -->
-    <!-- <img
-      src="./mock/image.png"
-      alt="hotel image"
-      width="500"
-      height="500"
-      class="rounded-lg"
-    > -->
     
     <div class="mt-3 font-medium">
       {{hotel.title}}
