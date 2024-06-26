@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { secondaryRoutes } from "@/composables/navRoutes.ts";
+import { secondaryRoutes } from "@/composables/navRoutes";
 </script>
 
 <style lang="scss" scoped>
