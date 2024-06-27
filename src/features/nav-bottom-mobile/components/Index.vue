@@ -1,6 +1,6 @@
 <template>
     <v-container>
-      <v-bottom-navigation>
+      <v-bottom-navigation :class="{'hide-bottom-nav' : scrollHistory.isScrollingBottom}">
         <v-btn
           v-for="route of secondaryRoutes"
           :key="route.name"
@@ -19,10 +19,19 @@
 
 <script lang="ts" setup>
 import { getSecondaryRoutes } from "@/composables/navRoutes";
+import { onBeforeUnmount, ref } from "vue";
 import { useRouter } from "vue-router";
 
-const router = useRouter();
+import {
+  scrollHistory,
+  addEventListenerScrollBottom,
+  removeEventListenerScrollBottomUnmount,
+} from "../composables/isScrollingBottom";
 
+addEventListenerScrollBottom();
+removeEventListenerScrollBottomUnmount();
+
+const router = useRouter();
 const secondaryRoutes = getSecondaryRoutes();
 </script>
 
@@ -36,5 +45,10 @@ const secondaryRoutes = getSecondaryRoutes();
   & > :first-child {
     opacity: 0 !important;
   }
+}
+
+.hide-bottom-nav {
+  height: 0px !important;
+  transition: height 0.5s;
 }
 </style>

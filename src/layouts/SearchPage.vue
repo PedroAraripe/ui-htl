@@ -10,7 +10,7 @@
 
     <hr class="bg-g-1 py-0.3">
 
-    <main>
+    <main class="mb-15 mb-lg-0">
       <slot name="main" />
     </main>
   </div>
