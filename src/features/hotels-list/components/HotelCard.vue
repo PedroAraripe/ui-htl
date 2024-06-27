@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper-hotel-card px-6 py-5">
-    <HotelSlider :previews="hotel.previews" />
+    <HotelSlider
+      :border-radius-none="borderRadiusNone"
+      :item-id="hotel.id"
+      :previews="hotel.previews"
+    />
     
     <div class="mt-3 font-medium">
       {{hotel.title}}
@@ -37,9 +41,14 @@ price: 206 -->
 <script lang="ts" setup>
 import { defineProps, type PropType } from "vue";
 import {type IHotelCardPreview} from "../types/HotelCard";
-import HotelSlider from "./HotelSlider.vue"
+import HotelSlider from "@/components/HotelSlider.vue"
 
 defineProps({
+  borderRadiusNone: {
+    required: false,
+    default: false,
+    type: Boolean
+  },
   hotel: {
     type: Object as PropType<IHotelCardPreview>,
     required: true,

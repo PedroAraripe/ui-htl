@@ -1,7 +1,8 @@
 <template>
   <v-carousel
     :show-arrows="false"
-    class="wrapper-carousel-slider rounded-lg overflow-hidden"
+    :class="{'rounded-lg' : !borderRadiusNone}"
+    class="wrapper-carousel-slider overflow-hidden"
     height="auto"
   >
     <v-carousel-item
@@ -12,18 +13,37 @@
       aspect-ratio="1.3"
       hide-delimiter-background
       draggable
+      @click="router.push({
+        name: 'rooms',
+        params: {
+          id: itemId
+        } 
+      })"
     ></v-carousel-item>
   </v-carousel>
 </template>
 
 <script lang="ts" setup>
-import { type IPreview } from "../types/HotelCard";
+import { type IPreview } from "../features/hotels-list/types/HotelCard";
 import { defineProps, type PropType } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 defineProps({
   previews: {
+    required: true,
     type: Object as PropType<IPreview[]>,
-  }
+  },
+  borderRadiusNone: {
+    required: false,
+    default: false,
+    type: Boolean
+  },
+  itemId: {
+    type: Number,
+    required: true,
+  },
 })
 </script>
 
