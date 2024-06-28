@@ -3,7 +3,7 @@ import { onBeforeUnmount, ref } from "vue";
 export const scrollHistory = ref({
   currentScroll: 0,
   oldScroll: 0,
-  isScrollingBottom: true,
+  isScrollingBottom: false,
 });
 
 const handleScroll = (e:any) => {
