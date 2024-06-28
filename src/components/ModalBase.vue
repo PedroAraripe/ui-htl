@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { type Ref, ref, watch } from "vue";
 
-const emit = defineEmits(['submit'])
+const emit = defineEmits(['submit', 'update:modelValue'])
 
 const showDialog: Ref<Boolean> = ref(false);
 
