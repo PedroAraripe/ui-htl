@@ -3,7 +3,6 @@
     <HotelCard
       v-for="hotel of mockedHotels"
       :key="hotel.id"
-      class="px-6 py-5"
       :hotel="hotel"
     />
   </div>
