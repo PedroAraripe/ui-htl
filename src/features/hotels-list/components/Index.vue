@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 import { type Ref, ref } from "vue";
 import HotelCard from "./HotelCard.vue";
-import { IHotelCardPreview } from "../types/HotelCard";
+import { type IHotelCardPreview } from "../types/HotelCard";
 import { getHotelsList } from "../api";
 
 const mockedHotels: Ref<IHotelCardPreview[]> = ref([]);
