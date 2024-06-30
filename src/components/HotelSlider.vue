@@ -1,9 +1,10 @@
 <template>
   <v-carousel
-    :show-arrows="false"
     :class="{'rounded-lg' : !borderRadiusNone}"
     class="wrapper-carousel-slider overflow-hidden"
     height="auto"
+    :show-arrows="false"
+    delimiter-icon=""
   >
     <v-carousel-item
       v-for="image of previews"
@@ -49,6 +50,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .wrapper-carousel-slider {
+  // :deep(.v-window__controls) {
+  // }
+
   :deep(.v-carousel__controls) {
     $size: 7px;
     

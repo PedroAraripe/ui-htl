@@ -1,11 +1,8 @@
 <template>
   <v-form>
     <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          md="4"
-        >
+      <v-row class="w-100">
+        <v-col lg="12">
           <v-text-field
             class="search-preview"
             v-model="searchPreview"
@@ -13,7 +10,7 @@
             label="Para onde?"
             hide-details
             required
-          ></v-text-field>
+          />
           </v-col>
         </v-row>
     </v-container>

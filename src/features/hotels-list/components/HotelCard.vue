@@ -1,5 +1,5 @@
 <template>
-  <v-container class="wrapper-hotel-card">
+  <div>
     <HotelSlider
       :border-radius-none="borderRadiusNone"
       :item-id="hotel.id"
@@ -31,7 +31,7 @@
         Abre em {{ hotel.monthToOpen }}
       </div>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <!-- currentOpen: Boolean,

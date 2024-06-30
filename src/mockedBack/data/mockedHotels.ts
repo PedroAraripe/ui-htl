@@ -1,6 +1,10 @@
 import type { IHotelCardPreview } from "@/features/hotels-list/types/HotelCard";
 
-export const mockedHotels: IHotelCardPreview[] = [
+function randomIndex (max: number) { // min and max included 
+  return Math.floor(Math.random() * (max - 0 + 1) + 0);
+}
+
+export const mockedHotelsBase: IHotelCardPreview[] = [
   {
     id: 1,
     title: "Treine na Mansão X",
@@ -95,4 +99,14 @@ export const mockedHotels: IHotelCardPreview[] = [
       },
     ]
   },
-]
+];
+
+export const mockedHotels: IHotelCardPreview[] = [];
+
+for(let i = 0; i < 16; i++) {
+  const hotelIndex = randomIndex(mockedHotelsBase.length - 1);
+  const hotel = {... mockedHotelsBase[hotelIndex]};
+  hotel.id = i + 1;
+
+  mockedHotels.push(hotel);
+};
