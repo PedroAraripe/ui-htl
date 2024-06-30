@@ -1,45 +1,70 @@
-# vue-project
+# Prjeto Araripebnb
 
-This template should help get you started developing with Vue 3 in Vite.
+Este é um projeto Vue 3 configurado para rodar com a versão Node v16.20.2. A estrutura da arquitetura foi baseada na documentação disponível [aqui](https://fadamakis.com/a-front-end-application-folder-structure-that-makes-sense-ecc0b690968b).
 
-## Recommended IDE Setup
+## Pré-requisitos
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Certifique-se de ter os seguintes softwares instalados em sua máquina:
 
-## Type Support for `.vue` Imports in TS
+- [Node.js v16.20.2](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm) ou [yarn](https://yarnpkg.com/getting-started/install)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Instalação
 
-## Customize configuration
+Siga os passos abaixo para configurar o projeto:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/PedroAraripe/ui-htl.git
+   cd ui-htl
+   ```
 
-## Project Setup
+2. Instale as dependências do projeto:
+   ```sh
+   npm install
+   ```
 
-```sh
-npm install
-```
+   ou
 
-### Compile and Hot-Reload for Development
+   ```sh
+   yarn install
+   ```
+
+## Executando o Projeto
+
+Para iniciar o servidor de desenvolvimento, use o comando:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+ou
 
 ```sh
-npm run build
+yarn dev
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+O servidor será iniciado e você poderá acessar a aplicação no navegador através da URL que aparecerá no terminal.
+
+## Estrutura do Projeto
+
+A estrutura do projeto segue as melhores práticas de arquitetura de front-end. Para mais detalhes sobre a arquitetura utilizada, consulte a [documentação da arquitetura](https://fadamakis.com/a-front-end-application-folder-structure-that-makes-sense-ecc0b690968b).
+
+## Scripts Disponíveis
+
+- `npm run dev` ou `yarn dev`: Inicia o servidor de desenvolvimento.
+- `npm run build` ou `yarn build`: Gera a build para produção.
+- `npm run serve` ou `yarn serve`: Inicia um servidor local para servir a build de produção.
+- `npm run nomeNovaFeature`: Cria as pastas para uma nova feature automaticamente em `@/features/nomeNovaFeature`.
+
+## Criando uma Nova Feature
+
+Para criar uma nova feature, basta rodar o comando:
 
 ```sh
-npm run test:unit
+npm run nomeNovaFeature
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Este comando criará automaticamente as pastas necessárias para a nova feature em `@/features/nomeNovaFeature`.
 
-```sh
-npm run lint
-```
+Espero que isso ajude! Se precisar de mais alguma coisa, estou à disposição.
