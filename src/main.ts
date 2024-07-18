@@ -34,7 +34,6 @@ app.use(createPinia())
 
 app.use(router)
 app.use(vuetify)
-app.use(vuetify)
 
 app.component('l-map', LMap);
 app.component('l-tile-layer', LTileLayer);

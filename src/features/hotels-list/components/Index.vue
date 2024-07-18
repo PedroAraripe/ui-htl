@@ -12,11 +12,18 @@
 </template>
 
 <script lang="ts" setup>
-import { type Ref, ref } from "vue";
-import HotelCard from "./HotelCard.vue";
-import { type IHotelCardPreview } from "../types/HotelCard";
-import { getHotelsList } from "../api";
+import { computed, watch } from "vue";
+import { useRoute } from "vue-router";
 
-const mockedHotels: Ref<IHotelCardPreview[]> = ref([]);
-getHotelsList().then((hotels: IHotelCardPreview[]) => mockedHotels.value = hotels);
+import HotelCard from "./HotelCard.vue";
+
+import { useHotelsListStore } from '../stores';
+
+const route = useRoute();
+const location = computed(() => route.query);
+
+const hotelsListStore = useHotelsListStore();
+const mockedHotels = computed(() => hotelsListStore.hotelList);
+
+watch(() => location.value, hotelsListStore.findBySearchFilters, { immediate: true, deep: true })
 </script>

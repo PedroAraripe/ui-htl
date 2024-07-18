@@ -121,7 +121,10 @@ watch(formQuery.value, (newValue) => {
 </script>
 
 <style lang="scss" scoped>
-.wrapper-search-form .remove-padding :deep(.v-expansion-panel-text__wrapper){
-  padding: 0 !important;
+
+@media (max-width: 600px) {
+  .wrapper-search-form .remove-padding :deep(.v-expansion-panel-text__wrapper){
+    padding: 0 !important;
+  }
 }
-</style>
+</style>../../../types/IFormSearch

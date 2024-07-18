@@ -8,6 +8,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
   {
     id: 1,
     title: "Treine na Mansão X",
+    location: "Curitiba - PR",
     receiver: "Jubilee",
     monthToOpen: "Junho",
     currentOpen: true,
@@ -34,6 +35,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
   {
     id: 2,
     title: "Venha se aventurar no divertida mente 2",
+    location: "Curitiba - PR",
     receiver: "Joy",
     monthToOpen: "Junho",
     currentOpen: true,
@@ -60,6 +62,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
   {
     id: 3,
     title: "Venha se aventurar no divertida mente 2",
+    location: "Fortaleza - CE",
     receiver: "Joy",
     currentOpen: false,
     monthToOpen: "Fevereiro",
@@ -81,6 +84,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
   {
     id: 4,
     title: "Venha se aventurar no divertida mente 2",
+    location: "Fortaleza - CE",
     receiver: "Joy",
     currentOpen: false,
     monthToOpen: "Fevereiro",
@@ -103,7 +107,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
 
 export const mockedHotels: IHotelCardPreview[] = [];
 
-for(let i = 0; i < 16; i++) {
+for(let i = 0; i < 12; i++) {
   const hotelIndex = randomIndex(mockedHotelsBase.length - 1);
   const hotel = {... mockedHotelsBase[hotelIndex]};
   hotel.id = i + 1;
