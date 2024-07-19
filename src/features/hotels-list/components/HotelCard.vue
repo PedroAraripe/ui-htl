@@ -5,32 +5,35 @@
       :item-id="hotel.id"
       :previews="hotel.previews"
     />
+
+    <div class="aside">
+      <div class="mt-3 font-medium">
+        {{hotel.title}}
+      </div>
     
-    <div class="mt-3 font-medium">
-      {{hotel.title}}
-    </div>
+      <div class="my-1 text-grey-darken-2 receiver">
+        Anfitriã(o): {{hotel.receiver}}
+      </div>
+    
+      <div>
+        <div v-if="!hotel.currentOpen" class="font-medium">
+          Reserva encerrada
+        </div>
   
-    <div class="my-1 text-grey-darken-2 receiver">
-      Anfitriã(o): {{hotel.receiver}}
-    </div>
+        <div v-else-if="hotel.price" class="space-x-1">
+          <span>
+            <span class="font-medium">{{ hotel.price.symbol }}</span>
+            <span class="font-medium">{{ hotel.price.value }}</span>
+          </span>
+          <span>por hóspede</span>
+        </div>
   
-    <div>
-      <div v-if="!hotel.currentOpen" class="font-medium">
-        Reserva encerrada
-      </div>
-
-      <div v-else-if="hotel.price" class="space-x-1">
-        <span>
-          <span class="font-medium">{{ hotel.price.symbol }}</span>
-          <span class="font-medium">{{ hotel.price.value }}</span>
-        </span>
-        <span>por hóspede</span>
-      </div>
-
-      <div class="font-medium" v-else>
-        Abre em {{ hotel.monthToOpen }}
+        <div class="font-medium" v-else>
+          Abre em {{ hotel.monthToOpen }}
+        </div>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -70,6 +73,13 @@ defineProps({
 
   .receiver {
     line-height: 1rem;
+  }
+
+}
+
+.aside {
+  & * {
+    line-height: 1.1rem !important;
   }
 }
 </style>
