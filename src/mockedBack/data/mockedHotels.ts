@@ -107,7 +107,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
 
 export const mockedHotels: IHotelCardPreview[] = [];
 
-for(let i = 0; i < 12; i++) {
+for(let i = 0; i < 24; i++) {
   const hotelIndex = randomIndex(mockedHotelsBase.length - 1);
   const hotel = {... mockedHotelsBase[hotelIndex]};
   hotel.id = i + 1;

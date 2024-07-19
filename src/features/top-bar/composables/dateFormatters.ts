@@ -1,6 +1,6 @@
 import moment from "moment";
 
-type calendarDate = Object | null;
+type calendarDate = Object | undefined;
 
 export const formatDateISO = (date: calendarDate) => (
   date ? moment(date).format("YYYY-MM-DD") : ""

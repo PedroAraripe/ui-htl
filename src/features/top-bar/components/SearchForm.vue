@@ -95,8 +95,8 @@
 
 <script lang="ts" setup>
 import { type Ref, ref, watch } from "vue";
-import { type IFormSearch } from "../types/IFormSearch";
 import { formatDatePreview } from "../composables/dateFormatters";
+import { type IHotelSearchFilter } from "@/types/IHotelSearchFilter";
 
 const emit = defineEmits(["update:modelValue"]);
 
@@ -105,19 +105,15 @@ defineProps({
     type: Boolean,
     default: false,
     required: false,
-  }
+  },
 });
 
-const formQuery: Ref<IFormSearch> = ref({
-  checkIn: null,
-  checkOut: null,
-  location: null,
-  guests: null,
-});
+const formQuery: Ref<IHotelSearchFilter> = ref({});
 
 watch(formQuery.value, (newValue) => {
   emit("update:modelValue", newValue)
-}, {deep: true})
+}, {deep: true});
+
 </script>
 
 <style lang="scss" scoped>
@@ -127,4 +123,4 @@ watch(formQuery.value, (newValue) => {
     padding: 0 !important;
   }
 }
-</style>../../../types/IFormSearch
+</style>

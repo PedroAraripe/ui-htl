@@ -17,7 +17,13 @@
           
         <template v-slot:actions>
           <v-btn
-            class="mx-2 text-white ms-auto bg-highlight-buttons px-5"
+            v-if="clearText"
+            class="border border-2 px-5"
+            :text="clearText"
+            @click="handleCancel"
+          ></v-btn>
+          <v-btn
+            class="mx-2 text-white bg-highlight-buttons px-5"
             :text="submitText"
             @click="handleSubmit"
           ></v-btn>
@@ -30,7 +36,7 @@
 <script lang="ts" setup>
 import { type Ref, ref, watch } from "vue";
 
-const emit = defineEmits(['submit', 'update:modelValue'])
+const emit = defineEmits(['submit', 'update:modelValue', 'clear'])
 
 const showDialog: Ref<Boolean> = ref(false);
 
@@ -39,15 +45,25 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  clearText: {
+    type: String,
+    required: false,
+  },
   submitText: {
     type: String,
     default: "ok",
     required: false,
-  }
+  },
 });
 
 const handleSubmit = () => {
   emit("submit", true);
+
+  showDialog.value = false;
+};
+
+const handleCancel = () => {
+  emit("clear", true);
 
   showDialog.value = false;
 };

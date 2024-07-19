@@ -21,10 +21,13 @@
 import { computed, ref, type Ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { formatDateReadable } from "../composables/dateFormatters";
+import { searchFiltersQueryComp } from '@/composables/routeQueries';
 
 const route = useRoute();
 
 const searchPreview: Ref<string> = ref("");
+
+const searchFiltersQuery = searchFiltersQueryComp();
 
 const currentSearch = computed(() => {
   const {
@@ -44,9 +47,9 @@ const currentSearch = computed(() => {
   return Object.values(queryCleaned).filter(c => c).join(", ");
 });
 
-watch(() => currentSearch.value, (newValue) => {
+watch(() => searchFiltersQuery.value, (newValue) => {
   if(newValue) {
-    searchPreview.value = newValue;
+    searchPreview.value = currentSearch.value;
   }
 }, { immediate: true })
 </script>

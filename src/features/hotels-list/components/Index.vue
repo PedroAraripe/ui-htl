@@ -3,7 +3,7 @@
     <v-row>
       <v-col
         v-for="hotel of mockedHotels"
-        :key="hotel.id" lg="3" cols="12"
+        :key="hotel.id" lg="2" cols="12"
       >
         <HotelCard :hotel="hotel" />
       </v-col>
@@ -13,17 +13,16 @@
 
 <script lang="ts" setup>
 import { computed, watch } from "vue";
-import { useRoute } from "vue-router";
 
 import HotelCard from "./HotelCard.vue";
 
 import { useHotelsListStore } from '../stores';
+import { searchFiltersQueryComp } from "@/composables/routeQueries";
 
-const route = useRoute();
-const location = computed(() => route.query);
+const searchFilter = searchFiltersQueryComp();
 
 const hotelsListStore = useHotelsListStore();
 const mockedHotels = computed(() => hotelsListStore.hotelList);
 
-watch(() => location.value, hotelsListStore.findBySearchFilters, { immediate: true, deep: true })
+watch(() => searchFilter.value, hotelsListStore.findBySearchFilters, { immediate: true, deep: true })
 </script>
