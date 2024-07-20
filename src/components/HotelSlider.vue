@@ -75,4 +75,4 @@ defineProps({
     }
   }
 }
-</style>
+</style>../types/HotelCard

@@ -10,9 +10,7 @@
         title="Busque seu hotel"
       >
         <template v-slot:default>
-          <slot>
-
-          </slot>
+          <slot />
         </template>
           
         <template v-slot:actions>
