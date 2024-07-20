@@ -1,6 +1,14 @@
 <template>
   <div class="wrapper-top-bar bg-w-1">
-    <SearchHotel @click="openForm" />
+    <v-form>
+      <v-container>
+        <SearchHotel
+          class="w-lg-50 mx-auto"
+          @click="openForm"
+          @contextmenu="openForm"
+        />
+      </v-container>
+    </v-form>
     <ModalBase
       v-model="showDialog"
       @submit="handleSubmit"

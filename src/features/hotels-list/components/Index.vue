@@ -1,5 +1,9 @@
 <template>
   <v-container>
+    <div class="opacity-0 mb-15">
+      oh my god thats not clean but i need to sleep
+    </div>
+
     <v-row>
       <v-col
         v-for="hotel of mockedHotels"
@@ -8,6 +12,10 @@
         <HotelCard :hotel="hotel" />
       </v-col>
     </v-row>
+
+    <div class="opacity-0 mb-20">
+      oh my god thats not clean but i need to sleep
+    </div>
   </v-container>
 </template>
 

@@ -95,10 +95,13 @@
 
 <script lang="ts" setup>
 import { type Ref, ref, watch } from "vue";
-import { formatDatePreview } from "../composables/dateFormatters";
+import { formatDatePreview, dateFilterAccepted } from "../composables/dateFormatters";
 import { type IHotelSearchFilter } from "@/types/IHotelSearchFilter";
+import { searchFiltersQueryComp } from "@/composables/routeQueries";
 
 const emit = defineEmits(["update:modelValue"]);
+const searchFilter = searchFiltersQueryComp();
+const isLoaded = ref(false);
 
 defineProps({
   removePadding: {
@@ -110,8 +113,23 @@ defineProps({
 
 const formQuery: Ref<IHotelSearchFilter> = ref({});
 
+const setDataFromQuery = () => {
+  formQuery.value = {
+     ...formQuery.value,
+     ...searchFilter.value,
+     checkIn: dateFilterAccepted(searchFilter.value.checkIn),
+     checkOut: dateFilterAccepted(searchFilter.value.checkOut),
+   }
+
+  isLoaded.value = true;
+}
+
+setDataFromQuery();
+
 watch(formQuery.value, (newValue) => {
-  emit("update:modelValue", newValue)
+  if(isLoaded) {
+    emit("update:modelValue", newValue)
+  }
 }, {deep: true});
 
 </script>

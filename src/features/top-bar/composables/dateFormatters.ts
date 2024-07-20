@@ -13,3 +13,7 @@ export const formatDatePreview = (date: calendarDate) => (
 export const formatDateReadable = (date: calendarDate) => (
   date ? moment(date).format("DD/MM/YYYY") : ""
 );
+
+export const dateFilterAccepted = (date: any) => (
+  date ? moment(date).toDate() : undefined
+);

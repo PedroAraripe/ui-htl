@@ -1,20 +1,18 @@
 <template>
-  <v-form>
-    <v-container>
-      <v-row class="w-100">
-        <v-col lg="12">
-          <v-text-field
-            class="search-preview"
-            v-model="searchPreview"
-            :counter="10"
-            label="Para onde?"
-            hide-details
-            required
-          />
-          </v-col>
-        </v-row>
-    </v-container>
-  </v-form>
+  <div class="wrapper-row-search">
+    <v-text-field
+      class="search-preview"
+      v-model="searchPreview"
+      :counter="10"
+      label="Para onde?"
+      hide-details
+      required
+    >
+      <template v-slot:append-inner>
+        <SearchIcon class="me-3 me-lg-5" />
+      </template>
+    </v-text-field>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -22,6 +20,7 @@ import { computed, ref, type Ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { formatDateReadable } from "../composables/dateFormatters";
 import { searchFiltersQueryComp } from '@/composables/routeQueries';
+import SearchIcon from '@/components/buttons/SearchIcon.vue';
 
 const route = useRoute();
 
@@ -55,9 +54,34 @@ watch(() => searchFiltersQuery.value, (newValue) => {
 </script>
 
 <style lang="scss" scoped>
-.search-preview :deep(input) {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.wrapper-row-search {
+  position: relative;
+
+  &:hover, & *:hover {
+    cursor: pointer !important;
+  }
+
+  .search-preview {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid #0000001c;
+  
+    :deep(input) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    :deep(.v-field__outline) {
+      display: none !important;
+    }
+
+  }
+
+  .icon {
+    position: absolute !important;
+    right: 0;
+  }
 }
 </style>
