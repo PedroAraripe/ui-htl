@@ -43,7 +43,7 @@ price: 206 -->
 
 <script lang="ts" setup>
 import { defineProps, type PropType } from "vue";
-import {type IHotelCardPreview} from "@/types/HotelCard";
+import type { IHotelCardPreview } from '@/types/IHotelComponents';
 import HotelSlider from "@/components/HotelSlider.vue"
 
 defineProps({

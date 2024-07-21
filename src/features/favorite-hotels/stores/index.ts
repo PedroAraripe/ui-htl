@@ -1,6 +1,6 @@
 import { ref, computed, type Ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { IHotelCardPreview } from '@/types/HotelCard';
+import type { IHotelCardPreview } from '@/types/IHotelComponents';
 
 export const useCounterStore = defineStore('favorites', () => {
   const favorites: Ref<IHotelCardPreview[]> = ref([]);

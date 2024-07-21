@@ -2,7 +2,7 @@ import { ref, type Ref } from 'vue'
 import { defineStore } from 'pinia'
 import { backGetRoomsList } from '@/mockedBack/requests';
 import { searchFiltersQueryComp } from '@/composables/routeQueries';
-import type { IHotelCardPreview } from '@/types/HotelCard';
+import type { IHotelCardPreview } from '@/types/IHotelComponents';
 
 export const useHotelsListStore = defineStore('hotelList', () => {
   const hotelList: Ref<IHotelCardPreview[]> = ref([]);
