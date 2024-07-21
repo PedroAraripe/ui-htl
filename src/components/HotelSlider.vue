@@ -3,7 +3,7 @@
     :class="{'rounded-lg' : !borderRadiusNone}"
     class="wrapper-carousel-slider overflow-hidden"
     height="auto"
-    :show-arrows="false"
+    show-arrows="hover"
     delimiter-icon=""
   >
     <v-carousel-item
@@ -50,8 +50,13 @@ defineProps({
 
 <style lang="scss" scoped>
 .wrapper-carousel-slider {
-  // :deep(.v-window__controls) {
-  // }
+   :deep(.v-window__controls) {
+    button {
+      width: 35px;
+      height: 35px;
+      opacity: 0.8;
+    }
+   }
 
   :deep(.v-carousel__controls) {
     $size: 7px;

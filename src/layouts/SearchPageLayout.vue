@@ -17,5 +17,11 @@
     <main class="mb-15 mb-lg-0">
       <slot name="main" />
     </main>
+
+    <hr class="bg-g-1 py-0.3">
+    
+    <div class="mb-15 mb-lg-0">
+      <slot name="footer" />
+    </div>
   </div>
 </template>
