@@ -3,4 +3,6 @@ export interface IHotelSearchFilter {
     checkOut?: Object,
     location?: string,
     guests?: number,
+    rooms?: number,
+    sortBy?: string,
 };

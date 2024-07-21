@@ -14,7 +14,7 @@
       @submit="handleSubmit"
       @clear="clearFilters"
       submit-text="Buscar"
-      clear-text="Limpar"
+      clear-text="Limpar filtro"
     >
       <SearchForm v-model="formData" />
     </ModalBase>
@@ -54,15 +54,12 @@ const handleSubmit = () => {
   const {
     checkIn,
     checkOut,
-    location,
-    guests,
   } = formData.value;
 
   router.push({
     name: "home",
     query: {
-      location,
-      guests,
+      ...formData.value,
       checkIn: formatDateISO(checkIn),
       checkOut: formatDateISO(checkOut),
     }

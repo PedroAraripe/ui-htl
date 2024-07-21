@@ -5,13 +5,23 @@ import { useRoute } from "vue-router";
 export const searchFiltersQueryComp = () => {
   const route = useRoute();
   const currentRouteQuery: ComputedRef<any> = computed(() => {
-    const queryRoute = route?.query || {};
+    const queryRoute: IHotelSearchFilter = route?.query || {};
+    const {
+      location,
+      checkIn,
+      checkOut,
+      guests,
+      rooms,
+      sortBy,
+    } = queryRoute;
 
     return {
-      location: queryRoute.location ?? undefined,
-      checkIn: queryRoute.checkIn?? undefined,
-      checkOut: queryRoute.checkOut?? undefined,
-      guests: queryRoute.guests?? undefined,
+      location,
+      checkIn,
+      checkOut,
+      guests,
+      rooms,
+      sortBy
     };
   });
   

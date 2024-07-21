@@ -88,6 +88,28 @@
             />
           </template>
         </v-expansion-panel>
+        
+        <v-expansion-panel>
+          <template v-slot:title>
+              <div class="align-center flex justify-space-between w-100">
+                <div>
+                  Número de quartos:
+                </div>
+                
+                <div class="font-weight-medium">
+                  {{ formQuery.rooms }}
+                </div>
+              </div>
+          </template>
+          <template v-slot:text>
+            <v-slider
+              v-model="formQuery.rooms"
+              :max="30"
+              :min="1"
+              :step="1"
+            />
+          </template>
+        </v-expansion-panel>
       </v-expansion-panels>
     </v-container>
   </v-form>

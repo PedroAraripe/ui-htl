@@ -1,5 +1,6 @@
 import type { IHotelSearchFilter } from "@/types/IHotelSearchFilter";
 import { mockedHotels } from "../data/mockedHotels";
+import type { IHotelCardPreview } from "@/types/IHotelComponents";
 
 export const backGetRoomsList = async (searchFilters: IHotelSearchFilter) => mockedHotels.filter(c =>  {
   const currentLocationSearch = searchFilters.location || "";
@@ -9,6 +10,14 @@ export const backGetRoomsList = async (searchFilters: IHotelSearchFilter) => moc
   const cleanedLocationLoop = c.location?.replace(/ /g,'').trim().toLowerCase();
 
   return currentLocationSearch ? cleanedLocationLoop === cleanedLocationSearching: true;
+})
+.filter(c => !searchFilters.sortBy || searchFilters.sortBy === "price" ? c.currentOpen : true )
+.sort((a: IHotelCardPreview, b: IHotelCardPreview) => {
+  if(searchFilters?.sortBy === "ratings") {
+    return b.ratings - a.ratings;
+  }
+
+  return b.price.value - a.price.value;
 });
 
 export const backGetRoomById = async (id: number) => mockedHotels.find(hotel => hotel.id === id);

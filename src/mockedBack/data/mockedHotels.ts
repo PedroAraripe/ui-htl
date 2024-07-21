@@ -11,7 +11,8 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     location: "Curitiba - PR",
     receiver: "Jubilee",
     monthToOpen: "Junho",
-    currentOpen: true,
+    ratings: 5,
+    currentOpen: false,
     price: {
       currency: "Real",
       symbol: "R$",
@@ -38,6 +39,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     location: "Curitiba - PR",
     receiver: "Joy",
     monthToOpen: "Junho",
+    ratings: 4,
     currentOpen: true,
     price: {
       currency: "Real",
@@ -64,8 +66,14 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     title: "Venha se aventurar no divertida mente 2",
     location: "Fortaleza - CE",
     receiver: "Joy",
-    currentOpen: false,
+    ratings: 3,
+    currentOpen: true,
     monthToOpen: "Fevereiro",
+    price: {
+      currency: "Real",
+      symbol: "R$",
+      value: 555
+    },
     previews: [
       {
         url: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEzMTA4MzUyMzk5Mjc3MDU5Nw%3D%3D/original/ced15ffe-0ab5-48cf-a189-dbdeaaf04387.jpeg?im_w=720&im_q=highq",
@@ -86,8 +94,14 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     title: "Venha se aventurar no divertida mente 2",
     location: "Fortaleza - CE",
     receiver: "Joy",
+    ratings: 2,
     currentOpen: false,
     monthToOpen: "Fevereiro",
+    price: {
+      currency: "Real",
+      symbol: "R$",
+      value: 666
+    },
     previews: [
       {
         url: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTEyNjIzMTk3NDU3MjE4Nzg2NA%3D%3D/original/0dc93cbc-8753-426d-b48d-6ae45bb1e3fd.jpeg?im_w=720&im_q=highq",

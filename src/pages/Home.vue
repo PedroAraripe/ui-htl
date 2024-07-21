@@ -4,6 +4,10 @@
       <TopBar />
     </template>
     
+    <template v-slot:sort-by>
+      <SortHotelsBy />
+    </template>
+    
     <template v-slot:main>
       <HotelsList />
     </template>
@@ -24,4 +28,5 @@ import { TopBar } from '@/features/top-bar';
 import { FooterBase } from '@/features/footer-base';
 import { HotelsList } from '@/features/hotels-list';
 import { NavBottomMobile } from '@/features/nav-bottom-mobile';
+import SortHotelsBy from '@/components/SortHotelsBy.vue';
 </script>

@@ -34,11 +34,13 @@ const currentSearch = computed(() => {
     checkOut,
     location,
     guests,
+    rooms,
   } = route.query;
 
   const queryCleaned = {
     location,
     guests: guests? `${guests} hóspedes` : null,
+    rooms: rooms? `${rooms} quartos` : null,
     checkIn: checkIn? formatDateReadable(checkIn): null, 
     checkOut: checkOut? formatDateReadable(checkOut): null, 
   };

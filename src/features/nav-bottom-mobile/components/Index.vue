@@ -8,8 +8,6 @@
         :class="{'v-btn--active' : route.isCurrent}"
         @click="router.push({name : route.name})"
       >
-        <!-- <v-icon>{{ route.meta.icon }}</v-icon> -->
-  
         <span>{{ route.meta.title }}</span>
       </v-btn>
     </v-bottom-navigation>
@@ -17,7 +15,6 @@
 
 <script lang="ts" setup>
 import { getSecondaryRoutes } from "@/composables/navRoutes";
-import { onBeforeUnmount, ref } from "vue";
 import { useRouter } from "vue-router";
 
 import {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="position-relative">
     <HotelSlider
       :border-radius-none="borderRadiusNone"
       :item-id="hotel.id"
@@ -15,22 +15,26 @@
         Anfitriã(o): {{hotel.receiver}}
       </div>
     
-      <div>
-        <div v-if="!hotel.currentOpen" class="font-medium">
-          Reserva encerrada
+      <div class="flex justify-space-between align-center">
+        <div>
+          <div v-if="!hotel.currentOpen" class="font-medium">
+            Reserva encerrada
+          </div>
+    
+          <div v-else-if="hotel.price" class="space-x-1">
+            <span>
+              <span class="font-medium">{{ hotel.price.symbol }}</span>
+              <span class="font-medium">{{ hotel.price.value }}</span>
+            </span>
+            <span>por hóspede</span>
+          </div>
+    
+          <div class="font-medium" v-else>
+            Abre em {{ hotel.monthToOpen }}
+          </div>
         </div>
-  
-        <div v-else-if="hotel.price" class="space-x-1">
-          <span>
-            <span class="font-medium">{{ hotel.price.symbol }}</span>
-            <span class="font-medium">{{ hotel.price.value }}</span>
-          </span>
-          <span>por hóspede</span>
-        </div>
-  
-        <div class="font-medium" v-else>
-          Abre em {{ hotel.monthToOpen }}
-        </div>
+
+        <RatingStar class="rating-star" v-if="hotel.ratings >= 4" :rating="hotel.ratings" />
       </div>
     </div>
     
@@ -45,6 +49,7 @@ price: 206 -->
 import { defineProps, type PropType } from "vue";
 import type { IHotelCardPreview } from '@/types/IHotelComponents';
 import HotelSlider from "@/components/HotelSlider.vue"
+import RatingStar from "@/components/RatingStar.vue"
 
 defineProps({
   borderRadiusNone: {
@@ -60,21 +65,10 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-.wrapper-hotel-card {
-  max-width: 100vw;
-  overflow: hidden;
-
-  font-size: 0.95rem;  
-
-  img {
-    aspect-ratio: 1 / 0.95;
-    object-fit: cover;
-  }
-
-  .receiver {
-    line-height: 1rem;
-  }
-
+.rating-star {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
 }
 
 .aside {

@@ -1,10 +1,6 @@
 <template>
   <v-container>
-    <div class="opacity-0 mb-15">
-      oh my god thats not clean but i need to sleep
-    </div>
-
-    <v-row>
+    <v-row v-if="mockedHotels.length">
       <v-col
         v-for="hotel of mockedHotels"
         :key="hotel.id" lg="2" cols="12"
@@ -12,10 +8,15 @@
         <HotelCard :hotel="hotel" />
       </v-col>
     </v-row>
-
-    <div class="opacity-0 mb-20">
-      oh my god thats not clean but i need to sleep
-    </div>
+    <v-row v-else>
+      <v-col cols="12" class="my-10 text-h5">
+        Não foram encontrados hóteis correspondentes para a sua busca
+        <br>
+        <div class="text-body-2">
+          (atualize a página que serão gerados novos dados aleatoriamente)
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
