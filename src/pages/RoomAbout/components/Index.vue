@@ -18,7 +18,7 @@ import HotelSlider from "@/components/HotelSlider.vue";
 import { computed, type Ref, ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { getCurrentHotel } from "../api";
-import { type IHotelCardPreview } from '@/features/hotels-list/types/HotelCard';
+import { type IHotelCardPreview } from '@/types/IHotelComponents';
 
 const route = useRoute();
 const currentRoomId = computed(() => +route.params.id);

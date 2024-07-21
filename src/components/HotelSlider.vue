@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type IPreview } from "../features/hotels-list/types/HotelCard";
+import { type IPreview } from "@/types/IHotelComponents";
 import { defineProps, type PropType } from "vue";
 import { useRouter } from "vue-router";
 
@@ -75,4 +75,4 @@ defineProps({
     }
   }
 }
-</style>../types/HotelCard
+</style>

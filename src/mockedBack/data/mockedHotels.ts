@@ -1,4 +1,4 @@
-import type { IHotelCardPreview } from "@/features/hotels-list/types/HotelCard";
+import type { IHotelCardPreview } from "@/types/IHotelComponents";
 
 function randomIndex (max: number) { // min and max included 
   return Math.floor(Math.random() * (max - 0 + 1) + 0);
