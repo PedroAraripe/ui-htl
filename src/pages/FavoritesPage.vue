@@ -50,4 +50,3 @@ watch(
   }
 );
 </script>
-../features/favorite-hotels/stores/favorites
