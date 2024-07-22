@@ -3,7 +3,7 @@ import type { IBasicRoutes } from "@/types/routes";
 export const secondaryNav : IBasicRoutes[] = [
   {
     path: '/',
-    component: () => import('@/pages/Home.vue'),
+    component: () => import('@/pages/HomePage.vue'),
     name: "home",
     meta: {
       icon: "",
@@ -12,7 +12,7 @@ export const secondaryNav : IBasicRoutes[] = [
   },
   {
     path: '/favorites',
-    component: () => import('@/pages/Favorites.vue'),
+    component: () => import('@/pages/FavoritesPage.vue'),
     name: "favorites",
     meta: {
       icon: "",

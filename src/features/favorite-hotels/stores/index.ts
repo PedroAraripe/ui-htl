@@ -1,7 +1,7 @@
 import { ref, type Ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { IHotelCardPreview } from '@/types/IHotelComponents';
-import { findAllHandler } from '@/api/favorites';
+import { findAllHandler } from '@/features/favorite-hotels/api/';
 import type { IHotelSearchFilter } from '@/types/IHotelSearchFilter';
 
 export const useFavoritesStore = defineStore('favorites', () => {

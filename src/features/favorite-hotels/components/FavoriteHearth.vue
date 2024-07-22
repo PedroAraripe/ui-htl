@@ -14,7 +14,7 @@ import type { IHotelCardPreview } from '@/types/IHotelComponents';
 import {
     saveFavoriteById,
     unsaveFavoriteById
- } from "@/api/favorites";
+ } from "@/features/favorite-hotels/api";
 
 const props = defineProps({
     hotel: {
@@ -72,4 +72,4 @@ const favoriClickteHandler = async () => {
         color: red;
     }
 }
-</style>../../../api
+</style>

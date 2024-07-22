@@ -14,12 +14,7 @@
       aspect-ratio="1.3"
       hide-delimiter-background
       draggable
-      @click="router.push({
-        name: 'rooms',
-        params: {
-          id: itemId
-        } 
-      })"
+      @click="setHotelIdQuery"
     ></v-carousel-item>
   </v-carousel>
 </template>
@@ -27,11 +22,9 @@
 <script lang="ts" setup>
 import { type IPreview } from "@/types/IHotelComponents";
 import { defineProps, type PropType } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
-const router = useRouter();
-
-defineProps({
+const props = defineProps({
   previews: {
     required: true,
     type: Object as PropType<IPreview[]>,
@@ -45,7 +38,19 @@ defineProps({
     type: Number,
     required: true,
   },
-})
+});
+
+const route = useRoute();
+const router = useRouter();
+
+const setHotelIdQuery = () => {
+  router.push({
+    query: {
+      ...route.query,
+      id: props.itemId
+    } 
+  })
+};
 </script>
 
 <style lang="scss" scoped>

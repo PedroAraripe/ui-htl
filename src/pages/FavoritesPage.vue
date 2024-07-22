@@ -19,10 +19,11 @@
     <template v-slot:footer>
       <FooterBase />
     </template>
-  </SearchPageLayout>
+  </SearchPageLayout>  
 </template>
 
 <script lang="ts" setup>
+
 import SearchPageLayout from '@/layouts/SearchPageLayout.vue';
 import { TopBar } from '@/features/top-bar';
 import { FooterBase } from '@/features/footer-base';
@@ -30,21 +31,23 @@ import { HotelsList } from '@/features/hotels-list';
 import { NavBottomMobile } from '@/features/nav-bottom-mobile';
 import SortHotelsBy from '@/components/SortHotelsBy.vue';
 
-import { useHotelsListStore } from '@/stores/hotelsList';
-import { searchFiltersQueryComp } from "@/composables/routeQueries";
+
+import { useFavoritesStore } from '@/features/favorite-hotels/stores';
 import { computed, watch } from 'vue';
 
-const searchFilter = searchFiltersQueryComp();
-
-const hotelsListStore = useHotelsListStore();
+const hotelsListStore = useFavoritesStore();
 const hotels = computed(() => hotelsListStore.list);
+
+import { searchFiltersQueryComp } from "@/composables/routeQueries";
+const searchFilter = searchFiltersQueryComp();
 
 watch(
   () => searchFilter.value,
-  hotelsListStore.findBySearchFilters,
+  hotelsListStore.findAll,
   {
     immediate: true,
     deep: true
   }
 );
 </script>
+../features/favorite-hotels/stores/favorites
