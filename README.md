@@ -68,3 +68,27 @@ npm run nomeNovaFeature
 Este comando criará automaticamente as pastas necessárias para a nova feature em `@/features/nomeNovaFeature`.
 
 Espero que isso ajude! Se precisar de mais alguma coisa, estou à disposição.
+
+## Instalação
+
+Principais features:
+
+1. Busca de hóteis por filtro:
+   ```sh
+   Listagem de hóteis e possibilidade de filtrar por número de hóspedes, localidade etc
+   ```
+
+2. Hotéis favoritos:
+   ```sh
+   É possível que o usuário adicione um hotel a lista de favoritos clicando no ícone de coração no card de hotel e assim compare os seus hotéis desejados
+   ```
+
+3. Ordenação de lista de hotéis:
+   ```sh
+   Tanto para a listagem inicial quanto para a listagem de favoritos é possível ordenar por preço ou avaliações
+   ```
+
+4. Responsividade:
+   ```sh
+   Todo o projeto está com responsividade e boa usabilidade 
+   ```
