@@ -2,7 +2,7 @@ import type { IHotelSearchFilter } from "@/types/IHotelSearchFilter";
 import { mockedHotels } from "../data/mockedHotels";
 import type { IHotelCardPreview } from "@/types/IHotelComponents";
 
-export const backGetRoomsList = async (searchFilters: IHotelSearchFilter) => mockedHotels.filter(c =>  {
+export const findAll = async (searchFilters: IHotelSearchFilter) => mockedHotels.filter(c =>  {
   const currentLocationSearch = searchFilters.location || "";
 
   // The Regex below removes all empty spaces in string :) trust me
@@ -20,4 +20,4 @@ export const backGetRoomsList = async (searchFilters: IHotelSearchFilter) => moc
   return b.price.value - a.price.value;
 });
 
-export const backGetRoomById = async (id: number) => mockedHotels.find(hotel => hotel.id === id);
+export const findHotelById = async (id: number) => mockedHotels.find(hotel => hotel.id === id);

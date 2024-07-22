@@ -18,5 +18,6 @@ export interface IHotelCardPreview {
   monthToOpen: string,
   price: IPrice,
   ratings: number,
-  location: string
+  location: string,
+  isFavorite: Boolean,
 }

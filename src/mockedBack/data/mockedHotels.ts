@@ -4,7 +4,7 @@ function randomIndex (max: number) { // min and max included
   return Math.floor(Math.random() * (max - 0 + 1) + 0);
 }
 
-export const mockedHotelsBase: IHotelCardPreview[] = [
+export const mockedHotels: IHotelCardPreview[] = [
   {
     id: 1,
     title: "Treine na Mansão X",
@@ -12,6 +12,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     receiver: "Jubilee",
     monthToOpen: "Junho",
     ratings: 5,
+    isFavorite: false,
     currentOpen: false,
     price: {
       currency: "Real",
@@ -40,6 +41,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     receiver: "Joy",
     monthToOpen: "Junho",
     ratings: 4,
+    isFavorite: false,
     currentOpen: true,
     price: {
       currency: "Real",
@@ -67,6 +69,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     location: "Fortaleza - CE",
     receiver: "Joy",
     ratings: 3,
+    isFavorite: false,
     currentOpen: true,
     monthToOpen: "Fevereiro",
     price: {
@@ -95,6 +98,7 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     location: "Fortaleza - CE",
     receiver: "Joy",
     ratings: 2,
+    isFavorite: false,
     currentOpen: false,
     monthToOpen: "Fevereiro",
     price: {
@@ -118,13 +122,3 @@ export const mockedHotelsBase: IHotelCardPreview[] = [
     ]
   },
 ];
-
-export const mockedHotels: IHotelCardPreview[] = [];
-
-for(let i = 0; i < 24; i++) {
-  const hotelIndex = randomIndex(mockedHotelsBase.length - 1);
-  const hotel = {... mockedHotelsBase[hotelIndex]};
-  hotel.id = i + 1;
-
-  mockedHotels.push(hotel);
-};

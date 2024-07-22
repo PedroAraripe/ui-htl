@@ -34,22 +34,28 @@
           </div>
         </div>
 
-        <RatingStar class="rating-star" v-if="hotel.ratings >= 4" :rating="hotel.ratings" />
+        <RatingStar
+          v-if="hotel.ratings >= 4"
+          :rating="hotel.ratings"
+          class="rating-star"
+        />
+
+        <FavoriteHearth
+          class="favorite-hearth"
+          :hotel="hotel"
+        />
       </div>
     </div>
     
   </div>
 </template>
 
-<!-- currentOpen: Boolean,
-monthToOpen: Number,
-price: 206 -->
-
 <script lang="ts" setup>
 import { defineProps, type PropType } from "vue";
 import type { IHotelCardPreview } from '@/types/IHotelComponents';
 import HotelSlider from "@/components/HotelSlider.vue"
-import RatingStar from "@/components/RatingStar.vue"
+import FavoriteHearth from "@/features/favorite-hotels/components/FavoriteHearth.vue"
+import RatingStar from "./RatingStar.vue";
 
 defineProps({
   borderRadiusNone: {
@@ -68,7 +74,13 @@ defineProps({
 .rating-star {
   position: absolute;
   top: -0.5rem;
-  right: -0.5rem;
+  left: -0.5rem;
+}
+
+.favorite-hearth {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .aside {

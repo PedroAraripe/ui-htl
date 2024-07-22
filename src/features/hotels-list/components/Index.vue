@@ -1,37 +1,47 @@
 <template>
-  <v-container>
-    <v-row v-if="mockedHotels.length">
-      <v-col
-        v-for="hotel of mockedHotels"
-        :key="hotel.id" lg="2" cols="12"
-      >
-        <HotelCard :hotel="hotel" />
-      </v-col>
-    </v-row>
-    <v-row v-else>
-      <v-col cols="12" class="my-10 text-h5">
+  <v-row v-if="hotels.length">
+    <v-col
+      v-for="hotel of hotels"
+      :key="hotel.id" :lg="colSize" cols="12"
+    >
+      <HotelCard :hotel="hotel" />
+    </v-col>
+  </v-row>
+  <v-row v-else>
+    <v-col cols="12" class="my-10 text-h5">
+      <div class="mb-4">
         Não foram encontrados hóteis correspondentes para a sua busca
-        <br>
-        <div class="text-body-2">
-          (atualize a página que serão gerados novos dados aleatoriamente)
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+      <router-link :to="{name: 'home'}" class="text-body-2">
+        <button class="btn-red-1">
+          Retornar ao início
+        </button>
+      </router-link>
+    </v-col>
+  </v-row>
 </template>
 
 <script lang="ts" setup>
-import { computed, watch } from "vue";
+import { type PropType } from "vue";
 
 import HotelCard from "./HotelCard.vue";
 
-import { useHotelsListStore } from '../stores';
-import { searchFiltersQueryComp } from "@/composables/routeQueries";
+import type { IHotelCardPreview } from "@/types/IHotelComponents";
 
-const searchFilter = searchFiltersQueryComp();
-
-const hotelsListStore = useHotelsListStore();
-const mockedHotels = computed(() => hotelsListStore.hotelList);
-
-watch(() => searchFilter.value, hotelsListStore.findBySearchFilters, { immediate: true, deep: true })
+defineProps({
+  colSize: {
+    type: Number,
+    required: false,
+    default: 2
+  },
+  hotels: {
+    type: Object as PropType<IHotelCardPreview[]>,
+    required: false,
+    default: [],
+  }
+})
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/style/themes.scss";
+</style>

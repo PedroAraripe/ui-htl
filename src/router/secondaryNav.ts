@@ -11,9 +11,9 @@ export const secondaryNav : IBasicRoutes[] = [
     }
   },
   {
-    path: '/about',
-    component: () => import('@/views/AboutView.vue'),
-    name: "about",
+    path: '/favorites',
+    component: () => import('@/pages/Favorites.vue'),
+    name: "favorites",
     meta: {
       icon: "",
       title: "Favoritos",

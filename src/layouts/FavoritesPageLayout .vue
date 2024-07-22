@@ -19,12 +19,20 @@
     </div>
 
     <slot name="sort-by" />
-    
+
     <v-container>
-      <main class="mb-15 mb-lg-0">
-        <slot name="main" />
-      </main>
+      <v-row>
+        <v-col lg="6" cols="12">
+          <main class="mb-15 mb-lg-0">
+            <slot name="main" />
+          </main>
+        </v-col>
+        <v-col lg="6" cols="12">
+          teste
+        </v-col>
+      </v-row>
     </v-container>
+
 
     <div class="opacity-0 mb-20">
       oh my god thats not clean but i need to sleep

@@ -28,12 +28,12 @@ const vuetify = createVuetify({
 import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(createPinia())
+app.use(createPinia());
 
-app.use(router)
-app.use(vuetify)
+app.use(router);
+app.use(vuetify);
 
 app.component('l-map', LMap);
 app.component('l-tile-layer', LTileLayer);

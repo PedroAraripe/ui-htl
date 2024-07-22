@@ -1,3 +1,3 @@
-import { backGetRoomById } from "@/mockedBack/requests";
+import { findHotelById } from "@/mockedBack/requests/hotels";
 
-export const findById = (id: number) => backGetRoomById(id);
+export const findById = (id: number) => findHotelById(id);
