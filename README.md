@@ -92,3 +92,8 @@ Principais features:
    ```sh
    Todo o projeto está com responsividade e boa usabilidade 
    ```
+
+5. CI/CD:
+   ```sh
+      Implementação de deploy automatico com CI/CD via githubactions
+   ```
