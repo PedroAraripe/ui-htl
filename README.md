@@ -1,4 +1,4 @@
-# Prjeto Araripebnb
+# Projeto Araripebnb
 
 Este é um projeto Vue 3 configurado para rodar com a versão Node v16.20.2. A estrutura da arquitetura foi baseada na documentação disponível [aqui](https://fadamakis.com/a-front-end-application-folder-structure-that-makes-sense-ecc0b690968b).
 
