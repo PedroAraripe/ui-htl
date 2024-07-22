@@ -2,6 +2,7 @@ import { ref, type Ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { IHotelCardPreview } from '@/types/IHotelComponents';
 import { findAllHandler } from '@/api/favorites';
+import type { IHotelSearchFilter } from '@/types/IHotelSearchFilter';
 
 export const useFavoritesStore = defineStore('favorites', () => {
   const list: Ref<IHotelCardPreview[]> = ref([]);
@@ -14,9 +15,9 @@ export const useFavoritesStore = defineStore('favorites', () => {
     list.value = list.value.filter((h: IHotelCardPreview) => h.id != hotel.id)
   }
 
-  const findAll = async () => {
+  const findAll = async (searchFilters: IHotelSearchFilter) => {
     try {
-      list.value = await findAllHandler();
+      list.value = await findAllHandler(searchFilters);
     } catch(e) {
       console.error(e);
     }

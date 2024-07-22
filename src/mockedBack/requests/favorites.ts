@@ -1,5 +1,7 @@
+import type { IHotelCardPreview } from "@/types/IHotelComponents";
 import { favorites } from "../data/favorites";
 import { findHotelById } from "./hotels";
+import type { IHotelSearchFilter } from "@/types/IHotelSearchFilter";
 
 export const insertFavoriteById = async (id: number) => {
   try {
@@ -29,4 +31,12 @@ export const removeFavoriteById = async (id: number) => {
   }
 };
 
-export const findAll = () => favorites;
+export const findAll = (searchFilters: IHotelSearchFilter) => favorites
+  .filter(c => !searchFilters.sortBy || searchFilters.sortBy === "price" ? c.currentOpen : true )
+  .sort((a: IHotelCardPreview, b: IHotelCardPreview) => {
+    if(searchFilters?.sortBy === "ratings") {
+      return b.ratings - a.ratings;
+    }
+
+    return b.price.value - a.price.value;
+  });

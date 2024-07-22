@@ -1,5 +1,5 @@
 <template>
-  <FavoritesPageLayout>
+  <SearchPageLayout>
     <template v-slot:aside>
       <TopBar />
     </template>
@@ -9,10 +9,7 @@
     </template>
     
     <template v-slot:main>
-      <HotelsList
-        :hotels="hotels"
-        :col-size="4"
-      />
+      <HotelsList :hotels="hotels" />
     </template>
     
     <template v-slot:nav-bottom-mobile>
@@ -22,11 +19,11 @@
     <template v-slot:footer>
       <FooterBase />
     </template>
-  </FavoritesPageLayout>  
+  </SearchPageLayout>  
 </template>
 
 <script lang="ts" setup>
-import FavoritesPageLayout  from '@/layouts/FavoritesPageLayout .vue';
+import SearchPageLayout  from '@/layouts/SearchPageLayout.vue';
 import { TopBar } from '@/features/top-bar';
 import { FooterBase } from '@/features/footer-base';
 import { HotelsList } from '@/features/hotels-list';
@@ -35,10 +32,20 @@ import SortHotelsBy from '@/components/SortHotelsBy.vue';
 
 
 import { useFavoritesStore } from '../stores/favorites';
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 
 const hotelsListStore = useFavoritesStore();
 const hotels = computed(() => hotelsListStore.list);
 
-hotelsListStore.findAll();
+import { searchFiltersQueryComp } from "@/composables/routeQueries";
+const searchFilter = searchFiltersQueryComp();
+
+watch(
+  () => searchFilter.value,
+  hotelsListStore.findAll,
+  {
+    immediate: true,
+    deep: true
+  }
+);
 </script>

@@ -27,9 +27,6 @@
             <slot name="main" />
           </main>
         </v-col>
-        <v-col lg="6" cols="12">
-          teste
-        </v-col>
       </v-row>
     </v-container>
 

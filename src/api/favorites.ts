@@ -1,5 +1,6 @@
 import { findAll, insertFavoriteById, removeFavoriteById } from "@/mockedBack/requests/favorites"
 import type { IHotelCardPreview } from "@/types/IHotelComponents";
+import type { IHotelSearchFilter } from "@/types/IHotelSearchFilter";
 
 export const saveFavoriteById = async (hotel: IHotelCardPreview) => {
   try {
@@ -17,9 +18,9 @@ export const unsaveFavoriteById = async (hotel: IHotelCardPreview) => {
   }
 };
 
-export const findAllHandler = async () => {
+export const findAllHandler = async (searchFilters: IHotelSearchFilter) => {
   try {
-    return await findAll();
+    return await findAll(searchFilters);
   } catch(e) {
     console.error(e);
     return [];
