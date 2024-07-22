@@ -35,7 +35,7 @@
         </div>
 
         <RatingStar
-          v-if="hotel.ratings >= 4"
+          v-if="hotel.ratings >= 4.95"
           :rating="hotel.ratings"
           class="rating-star"
         />
